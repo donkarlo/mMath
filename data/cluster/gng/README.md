@@ -176,11 +176,11 @@ nodes are decreased.
 ### Extending
 * Please don't hesitate to extend the code or distribute it.
 * Please see todo section to have some ideas on what are yet planned to be developed
-* As mentioned in code structure section, it would be nice if any extension inherits __Gng__ class and overrides __Gng._initializeTheFirstTwoNodes__, __Gng.__runPhases__, __AdaptationPhase.run__ or __GrowingPhase.run__ methods.
+* As mentioned in code structure section, it would be nice if any extension inherits **Gng** class and overrides **Gng._initializeTheFirstTwoNodes**, **Gng.__runPhases**, **AdaptationPhase.run** or **GrowingPhase.run** methods.
 * It would be nice if you follow these rules in your extensions:
   * All class attributes and methods starting with __ are considered private and better not to be accessed outside the class.
   * All class attributes and methods starting with _ should be considered protected members and better not to be accessed outside the class hierarchy.
-  * Any extention of Gng class should inherit from Gng class and override ClusteringStrgy._doSetClusters method
+  * Any extention of Gng class should inherit from Gng class and override **ClusteringStrgy._doSetClusters** method
   * Please, develop the unit test simultaneously in test directory 
   * Please use numpydoc to for documenting the code
 
