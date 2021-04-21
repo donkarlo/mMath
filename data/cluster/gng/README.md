@@ -214,6 +214,7 @@ __data.cluster.gng.GNG__ class inherits __data.cluster.gng.ClusteringStrgy__ cla
   * Developing numpydoc style documentation for all the code
   
 ###References
+
 <a id="1">[1]</a> 
 Bernd Fritzke. 1994. A growing neural gas network learns topologies. In Proceedings of the 7th International Conference on Neural Information Processing Systems (NIPS'94). MIT Press, Cambridge, MA, USA, 625–632.
 
