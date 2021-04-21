@@ -188,9 +188,7 @@ nodes are decreased.
 ### Unit testing
 * Please use unittest as the automatic testing framework
 * All unit tests are in /test
-* run the following to check all automated test
-  ```
-  python -m unittest
+* run **python -m unittest** to check all automated test
 
 
 ###Benchmarks
