@@ -1,3 +1,5 @@
+from typing import List
+
 from data.cluster.gng.graph.Node import Node
 
 
@@ -25,3 +27,7 @@ class Edge:
 
     def updateAge(self, updatedAge: int) -> None:
         self.__age = updatedAge
+
+    def getNodes(self)->List[Node]:
+        ''''''
+        return [self.__node1,self.__node2]

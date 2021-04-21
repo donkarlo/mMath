@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 
 from data.cluster.gng.Gng import Gng
-from ctumrs.topics.ThreeDPosVelFile import ThreeDPosVelFile
+from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
 from linearalgebra.Matrix import Matrix
 
 
