@@ -1,4 +1,4 @@
-#Growing Neural Gas
+# Growing Neural Gas
 * Growing Neural Gas(GNG) is an incremental clustering algorithm by Bernd Fritzke [[1]](#1).
 * GNG works by forming a competition between the two following phases until a selected stopping criterion is met[[2]](#1), after initialization, which places two randomly generated nodes into a network.
   * The first phase (“self-organizing”) is adaptation, which is performed in λ steps. In each step, random
