@@ -170,8 +170,8 @@ nodes are decreased.
                  ):
 
 ### Code structure
-__data.cluster.gng.GNG__ class inherits __data.cluster.gng.ClusteringStrgy__ class which enforces it to implement ___doSetClusters__ method which will be used by its __getClusters__ method  to either compute and return back the found clusters if its the first run or just return back without re-execution of the process.
-* Calling __GNG.getClusters()__ results in calling __GNG._runPhases__ which first intializes the GNG's graph object with two nodes and an edge between them (by calling __gng.__initializeTheFirstTwoNodes__) and then calls __AdaptationPhase.run__ or __GrowingPhase.run__. It is the competition between the latter two methods which gradually forms the graph.
+**data.cluster.gng.GNG** class inherits **data.cluster.gng.ClusteringStrgy** class which enforces it to implement **_doSetClusters** method which will be used by its **getClusters** method  to either compute and return back the found clusters if its the first run or just return back without re-execution of the process.
+* Calling **GNG.getClusters()** results in calling **GNG._runPhases** which first intializes the GNG's graph object with two nodes and an edge between them (by calling **gng.__initializeTheFirstTwoNodes**) and then calls **AdaptationPhase.run** or **GrowingPhase.run**. It is the competition between the latter two methods which gradually forms the graph.
 
 ### Extending
 * Please don't hesitate to extend the code or distribute it.
