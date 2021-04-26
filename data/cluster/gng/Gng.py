@@ -1,8 +1,7 @@
-from typing import List
-
 import numpy as np
 
-from data.cluster.ClusteringStrgy import ClusteringStrgy
+from data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
+from data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
 from data.cluster.gng.AdaptationPhase import AdaptationPhase
 from data.cluster.gng.GrowingPhase import GrowingPhase
 from data.cluster.gng.PhasableInterface import PhasableInterface
@@ -13,7 +12,7 @@ from linearalgebra.Matrix import Matrix
 from linearalgebra.Vector import Vector
 
 
-class Gng(ClusteringStrgy,PhasableInterface):
+class Gng(PhasableInterface,MainClusteringStrgy):
     '''Find how GNG works in AdaptationPhase and GrowingPhase'''
 
     def __init__(self,
@@ -57,12 +56,24 @@ class Gng(ClusteringStrgy,PhasableInterface):
         self.__localErrorDecayRate: float = localErrorDecayRate
         self.__globalErrorDecayRate: float = globalErrorDecayRate
         self._clusters = None
-        self.__graph: Graph = Graph()
+        self.__graph: Graph = None
         self.__adaptationPhase = None
         self.__growingPhase = None
+        #Will be set in getClusters
+        self.__gngClusteringStrgy:GngClusteringStrgy = None
 
-    def _doSetClusters(self) -> None:
+    def getClusters(self, gngClusteringStrgy:GngClusteringStrgy):
+        if type(self.__gngClusteringStrgy) == None or type(self.__gngClusteringStrgy) != type(gngClusteringStrgy):
+            self.__gngClusteringStrgy = gngClusteringStrgy
+            self._doSetClusters()
+        return self._clusters
+
+    def _doSetClusters(self):
+        self._clusters = self.__gngClusteringStrgy.getClusters(self.getInpRowsMatrix(), self.getGraph())
+
+    def _formGraph(self) -> None:
         ''''''
+        print("Finding the graph's nodes and edges. Please wait ....")
         self.__prepareData()
         self.__initializePhases()
         self._initializeTheFirstTwoNodes()
@@ -106,10 +117,6 @@ class Gng(ClusteringStrgy,PhasableInterface):
                 self.__growingPhase.run()
                 self.__iterationCounter = 0
             self.__iterationCounter += 1
-        self._clusters = self.__graph.getNodes()
-
-    def getClusters(self) -> List:
-        return super().getClusters()
 
     def __normalizeInpRows(self) -> None:
         '''Normalization of the input data'''
@@ -128,4 +135,7 @@ class Gng(ClusteringStrgy,PhasableInterface):
 
     def getGraph(self) -> Graph:
         ''''''
+        if self.__graph is None:
+            self.__graph = Graph()
+            self._formGraph()
         return self.__graph

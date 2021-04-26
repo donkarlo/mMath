@@ -4,6 +4,7 @@ from typing import List
 import numpy as np
 
 from linearalgebra import Matrix
+from linearalgebra.Vector import Vector
 
 
 class Matrix():
@@ -16,20 +17,22 @@ class Matrix():
     def _setNpRows(self,rows: Iterable):
         '''A matrix is formed of many rows'''
         self.__npRows: np.ndarray = None
-        if type(rows) is List:
-            self.__npRows = np.asarray(rows)
+        if type(rows) is list:
+            if isinstance(rows[0],Vector.Vector):
+                vecRows = []
+                for vecRow in rows:
+                    vecRows.append(vecRow.getNpRow())
+                self.__npRows = np.asarray(vecRows)
+            else:
+                self.__npRows = np.asarray(rows)
         elif type(rows) is np.ndarray:
             self.__npRows = rows
+
 
     def updateRows(self,rows: Iterable):
         self._setNpRows(rows)
 
 
-    # def __eq__(self, other:Matrix)->bool:
-    #     ''''''
-    #     if np.allclose(self.getNpRows(),other.getNpRows(),rtol=1e-07, atol=1e-08):
-    #         return True
-    #     return False
     def __mul__(self, other) -> Matrix:
         ''''''
         npResult = None

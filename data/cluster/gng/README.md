@@ -45,8 +45,10 @@ nodes are decreased.
 * Find and run this example in data/cluster/gng/examples/fiveUniformShapes/trajectory/Trajectory.py
 * Download and replace fileDataBank value with the file in https://www.dropbox.com/s/8i9gwm4ku4pcyu7/pos-vel-obs-from-gps.txt?dl=0 or create a similar file with same entries and then set inputNpMatrix with a Matrix which receives np.ndarrays of 6-dimensional rows  
   ```
+  from data.cluster.gng.graph.Graph import Graph
+  from data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
   from data.cluster.gng.Gng import Gng
-  from data.cluster.gng.PlotBuilder import PlotBuilder
+  from data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
   from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
   from linearalgebra.Matrix import Matrix
   
@@ -57,16 +59,24 @@ nodes are decreased.
           t3dposVel = ThreeDPosVelFile(fileDataBank)
           inputNpMatrix = Matrix(t3dposVel.getNpArr(5000))
   
-          gng = Gng(inputNpMatrix, maxNodesNum=33)
-          gng.getClusters()
-          gng.getGraph().report()
+          # A GNG object with maximum 20 nodes and maximum 200 Iterations
+          gng = Gng(inputNpMatrix, maxNodesNum=20,maxIterationsNum=200)
+          # By graph Object you have acess to nodes, edges etc
+          graph:Graph = gng.getGraph()
+          # what are nodes reference vectors and how many nodes and edges exist
+          graph.report()
   
-          plotBuilder = PlotBuilder(gng.getInpRowsMatrix(), gng.getGraph())
-          plotBuilder.showAll3D()
+          # Clustering input data points to groups, here Euclidean distance is used
+          cluterStrgy = EuclideanClosestNodeClusteringStrgy()
+          clusters = gng.getClusters(cluterStrgy)
+  
+          #Graph with each cluster having a unique color
+          gngGraphPlotBuilder = GngGraphPLotBuilder(gng.getInpRowsMatrix(), gng.getGraph())
+          gngGraphPlotBuilder.showAll3D(clusters)
   
   te = TrajectoryExample()
   te.run()
-![3D presentation of 6D data](https://raw.githubusercontent.com/donkarlo/mrs-self-awareness/master/docs/assets/gng-samples/drone-two-step-5000-points-100-nodes.png)
+![3D presentation of 6D data](https://raw.githubusercontent.com/donkarlo/mrs-self-awareness/master/docs/assets/gng-samples/drone-two-step-5000-points-100-nodes-200-itr.png)
 * The pale blue line is representing the given data.
 * The red stars represent the nodes' reference vectors
 * Colorful lines reprersent the edges which connect the nodes

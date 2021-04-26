@@ -1,5 +1,7 @@
+from data.cluster.gng.graph.Graph import Graph
+from data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
 from data.cluster.gng.Gng import Gng
-from data.cluster.gng.PlotBuilder import PlotBuilder
+from data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
 from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
 from linearalgebra.Matrix import Matrix
 
@@ -10,12 +12,20 @@ class TrajectoryExample:
         t3dposVel = ThreeDPosVelFile(fileDataBank)
         inputNpMatrix = Matrix(t3dposVel.getNpArr(5000))
 
-        gng = Gng(inputNpMatrix, maxNodesNum=33)
-        gng.getClusters()
-        gng.getGraph().report()
+        # A GNG object with maximum 20 nodes and maximum 200 Iterations
+        gng = Gng(inputNpMatrix, maxNodesNum=20,maxIterationsNum=200)
+        # By graph Object you have acess to nodes, edges etc
+        graph:Graph = gng.getGraph()
+        # what are nodes reference vectors and how many nodes and edges exist
+        graph.report()
 
-        plotBuilder = PlotBuilder(gng.getInpRowsMatrix(), gng.getGraph())
-        plotBuilder.showAll3D()
+        # Clustering input data points to groups, here Euclidean distance is used
+        cluterStrgy = EuclideanClosestNodeClusteringStrgy()
+        clusters = gng.getClusters(cluterStrgy)
+
+        #Graph with each cluster having a unique color
+        gngGraphPlotBuilder = GngGraphPLotBuilder(gng.getInpRowsMatrix(), gng.getGraph())
+        gngGraphPlotBuilder.showAll3D(clusters)
 
 te = TrajectoryExample()
 te.run()
