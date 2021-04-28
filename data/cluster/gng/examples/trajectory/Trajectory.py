@@ -10,7 +10,7 @@ class TrajectoryExample:
         # Positional data
         fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-obs-from-gps.txt"
         t3dposVel = ThreeDPosVelFile(fileDataBank)
-        inputNpMatrix = Matrix(t3dposVel.getNpArr(5000))
+        inputNpMatrix = Matrix(t3dposVel.getNpArr(5000,1))
 
         # A GNG object with maximum 20 nodes and maximum 200 Iterations
         gng = Gng(inputNpMatrix, maxNodesNum=20,maxIterationsNum=200)

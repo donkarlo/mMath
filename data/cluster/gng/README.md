@@ -77,12 +77,13 @@ nodes are decreased.
   te = TrajectoryExample()
   te.run()
 ![3D presentation of 6D data](https://raw.githubusercontent.com/donkarlo/mrs-self-awareness/master/docs/assets/gng-samples/drone-two-step-5000-points-100-nodes-200-itr.png)
+* Results for for 
 * The pale blue line is representing the given data.
 * The red stars represent the nodes' reference vectors
 * Colorful lines reprersent the edges which connect the nodes
 
 ### Interface (Only most essential methods. For details see the classes themselves)
-
+![GNG and clustering Class diagram](https://github.com/donkarlo/mmath/blob/main/docs/data/clustering/gng/uml/clustering-uml.png)
 * Gng class
   ```
   # rawData can be a list or an np.ndarray
@@ -207,6 +208,8 @@ nodes are decreased.
 ### Todo
 * GNG:
   * GNG with Utility factor (GNG-U) implementation [[3]](#1)
+  * Finding the right optimal values for GNG params for best clustering. Using (stochastic) gradient descent?
+    * Best clustering is the correct number of shapes in one set of data points
 * Graph related:
   * Implementing number of disconnected areas
 * Plotting:
