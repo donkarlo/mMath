@@ -1,4 +1,6 @@
-from data.pdf.Pdf import Pdf
+from mmath.data.pdf.Pdf import Pdf
+
+from mmath.data.probability.Event import Event
 
 
 class Uniform(Pdf):
@@ -10,4 +12,7 @@ class Uniform(Pdf):
         self.__samplesNum = samplesNum
 
     def getSample(self):
+        pass
+
+    def getValueByEvent(self, e:Event):
         pass

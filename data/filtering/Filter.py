@@ -80,3 +80,5 @@ class Filter(metaclass=abc.ABCMeta):
                 self.__observationSerie.getObservationSlice(0, self.__observationSerie.getLastObservationIndex() - 1)))
             stateCounter += 1
         self.__currentMarginalLikelihood = likelihoodSum
+
+

@@ -1,14 +1,14 @@
-from data.cluster.gng.graph.Graph import Graph
-from data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
-from data.cluster.gng.Gng import Gng
-from data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
-from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
-from linearalgebra.Matrix import Matrix
+from mmath.data.cluster.gng.graph.Graph import Graph
+from mmath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
+from mmath.data.cluster.gng.Gng import Gng
+from mmath.data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
+from mmath.data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
+from mmath.linearalgebra.Matrix import Matrix
 
 class TrajectoryExample:
     def run(self):
         # Positional data
-        fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-observation-from-gps.txt"
+        fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-obs-from-gps.txt"
         t3dposVel = ThreeDPosVelFile(fileDataBank)
         inputNpMatrix = Matrix(t3dposVel.getNpArr(5000,1))
 

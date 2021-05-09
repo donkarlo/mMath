@@ -19,9 +19,9 @@ nodes are decreased.
 #### Example with 2D plot.
 * Please find and run this example in data/cluster/gng/examples/FiveUniformShapes/Cluster.py
   ```
-  from data.cluster.gng.Gng import Gng
-  from data.cluster.gng.PlotBuilder import PlotBuilder
-  from data.cluster.gng.examples.FiveUniformShapes.Builder import Builder
+  from mmath.data.cluster.gng.Gng import Gng
+  from mmath.data.cluster.gng.PlotBuilder import PlotBuilder
+  from mmath.data.cluster.gng.examples.FiveUniformShapes.Builder import Builder
   from linearalgebra.Matrix import Matrix
   
   # A class to generate cloud data points for 5 shapes
@@ -45,11 +45,11 @@ nodes are decreased.
 * Find and run this example in data/cluster/gng/examples/fiveUniformShapes/trajectory/Trajectory.py
 * Download and replace fileDataBank value with the file in https://www.dropbox.com/s/8i9gwm4ku4pcyu7/pos-vel-obs-from-gps.txt?dl=0 or create a similar file with same entries and then set inputNpMatrix with a Matrix which receives np.ndarrays of 6-dimensional rows  
   ```
-  from data.cluster.gng.graph.Graph import Graph
-  from data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
-  from data.cluster.gng.Gng import Gng
-  from data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
-  from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
+  from mmath.data.cluster.gng.graph.Graph import Graph
+  from mmath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
+  from mmath.data.cluster.gng.Gng import Gng
+  from mmath.data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
+  from mmath.data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
   from linearalgebra.Matrix import Matrix
   
   class TrajectoryExample:
@@ -78,7 +78,7 @@ nodes are decreased.
   te.run()
 ![3D presentation of 6D data](https://raw.githubusercontent.com/donkarlo/mrs-self-awareness/master/docs/assets/gng-samples/drone-two-step-5000-points-100-nodes-200-itr.png)
 * Results for for 
-* The pale blue line is representing the given data.
+* The pale blue line is representing the given mmath.data.
 * The red stars represent the nodes' reference vectors
 * Colorful lines reprersent the edges which connect the nodes
 
@@ -143,7 +143,7 @@ nodes are decreased.
   pltBld = PlotBuilder(dataMatrix,graph)
   
   # 2D
-  from data.cluster.gng.PlotBuilder import PlotBuilder
+  from mmath.data.cluster.gng.PlotBuilder import PlotBuilder
   #Build a new plot builder
   plotBld = PlotBuilder()
   #Show all the data points, nodes and edges together in one Graph
@@ -170,7 +170,7 @@ nodes are decreased.
   ```
   class Gng(ClusteringStrgy,PhasableInterface):
   def __init__(self,
-                 inpRowsMatrix:Matrix,#The input data in Matrix object form data.linearalgebra.Matrix
+                 inpRowsMatrix:Matrix,#The input data in Matrix object form mmath.data.linearalgebra.Matrix
                  maxNodesNum: int = 100, #maximum number of nodes
                  maxAge: int = 100, # Maximum age of edges
                  maxIterationsNum: int = 300,  # landa, maximum iterations
@@ -181,7 +181,7 @@ nodes are decreased.
                  ):
 
 ### Code structure
-**data.cluster.gng.GNG** class inherits **data.cluster.gng.ClusteringStrgy** class which enforces it to implement **_doSetClusters** method which will be used by its **getClusters** method  to either compute and return back the found clusters if its the first run or just return back without re-execution of the process.
+**mmath.data.cluster.gng.GNG** class inherits **mmath.data.cluster.gng.ClusteringStrgy** class which enforces it to implement **_doSetClusters** method which will be used by its **getClusters** method  to either compute and return back the found clusters if its the first run or just return back without re-execution of the process.
 * Calling **GNG.getClusters()** results in calling **GNG._runPhases** which first intializes the GNG's graph object with two nodes and an edge between them (by calling **gng.__initializeTheFirstTwoNodes**) and then calls **AdaptationPhase.run** or **GrowingPhase.run**. It is the competition between the latter two methods which gradually forms the graph.
 
 ### Extending

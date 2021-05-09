@@ -3,8 +3,8 @@ from typing import List
 
 import numpy as np
 
-from linearalgebra import Matrix
-from linearalgebra.Vector import Vector
+from mmath.linearalgebra import Matrix
+from mmath.linearalgebra.Vector import Vector
 
 
 class Matrix():

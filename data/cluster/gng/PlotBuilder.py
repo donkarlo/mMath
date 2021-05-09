@@ -3,9 +3,9 @@ import random as rand
 from matplotlib import pyplot
 from mpl_toolkits.mplot3d import Axes3D
 
-from data.cluster.gng.graph.Graph import Graph
-from data.cluster.gng.graph.PlotBuilder import PlotBuilder as GraphPlotBuilder
-from linearalgebra.Matrix import Matrix
+from mmath.data.cluster.gng.graph.Graph import Graph
+from mmath.data.cluster.gng.graph.PlotBuilder import PlotBuilder as GraphPlotBuilder
+from mmath.linearalgebra.Matrix import Matrix
 
 
 class PlotBuilder(GraphPlotBuilder):

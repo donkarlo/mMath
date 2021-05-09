@@ -4,10 +4,9 @@ from mmath.data.probability.Event import Event
 
 
 class Pdf(Pdf):
-    def __init__(self, sample:Event, population:Population):
+    def __init__(self, population:Population):
         '''@todo is sample sub of population'''
-        self.__sample = sample
         self.__population = population
 
-    def getProbability(self):
-        return len(self.__sample)/len(self.__population)
+    def getValueByEvent(self,event:Event):
+        return len(event)/len(self.__population)

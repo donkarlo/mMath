@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-from data.cluster.gng.graph.Graph import Graph
-from test.GraphBuilder import GraphBuilder
+from mmath.data.cluster.gng.graph.Graph import Graph
+from mmath.test.GraphBuilder import GraphBuilder
 
 
 class PlotBuilder:
