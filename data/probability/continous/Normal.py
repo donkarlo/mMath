@@ -1,7 +1,9 @@
 import math
 
+from mmath.data.probability.Pdf import Pdf
 
-class Gaussian():
+
+class Normal(Pdf):
     def __init__(self, mean: float, standardDeviation: float):
         self.__mean = mean
         self.__standardDeviation = standardDeviation

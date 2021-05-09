@@ -8,7 +8,7 @@ from linearalgebra.Matrix import Matrix
 class TrajectoryExample:
     def run(self):
         # Positional data
-        fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-obs-from-gps.txt"
+        fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-observation-from-gps.txt"
         t3dposVel = ThreeDPosVelFile(fileDataBank)
         inputNpMatrix = Matrix(t3dposVel.getNpArr(5000,1))
 

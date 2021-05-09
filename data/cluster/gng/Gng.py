@@ -1,15 +1,15 @@
 import numpy as np
 
-from data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
-from data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
-from data.cluster.gng.AdaptationPhase import AdaptationPhase
-from data.cluster.gng.GrowingPhase import GrowingPhase
-from data.cluster.gng.PhasableInterface import PhasableInterface
-from data.cluster.gng.graph.Edge import Edge
-from data.cluster.gng.graph.Graph import Graph
-from data.cluster.gng.graph.Node import Node
-from linearalgebra.Matrix import Matrix
-from linearalgebra.Vector import Vector
+from mmath.data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
+from mmath.data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
+from mmath.data.cluster.gng.AdaptationPhase import AdaptationPhase
+from mmath.data.cluster.gng.GrowingPhase import GrowingPhase
+from mmath.algorithm.PhasableInterface import PhasableInterface
+from mmath.data.cluster.gng.graph.Edge import Edge
+from mmath.data.cluster.gng.graph.Graph import Graph
+from mmath.data.cluster.gng.graph.Node import Node
+from mmath.linearalgebra.Matrix import Matrix
+from mmath.linearalgebra.Vector import Vector
 
 
 class Gng(PhasableInterface,MainClusteringStrgy):

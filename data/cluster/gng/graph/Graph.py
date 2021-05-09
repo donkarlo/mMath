@@ -4,8 +4,8 @@ from typing import List
 
 import numpy as np
 
-from data.cluster.gng.graph.Edge import Edge
-from data.cluster.gng.graph.Node import Node
+from mmath.data.cluster.gng.graph.Edge import Edge
+from mmath.data.cluster.gng.graph.Node import Node
 
 
 class Graph:

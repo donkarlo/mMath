@@ -58,7 +58,10 @@ class Matrix():
         if power == -1:
             return self.getInverse()
         elif power == 'T':
-            Matrix.transpose(self)
+            return self.transpose(self)
+        elif isinstance(power , int):
+            if power>0:
+                pass
 
     def __sub__(self, other: Matrix) -> Matrix:
         '''over writes subtract'''
