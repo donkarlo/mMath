@@ -1,9 +1,9 @@
-from mmath.data.cluster.gng.graph.Graph import Graph
-from mmath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
-from mmath.data.cluster.gng.Gng import Gng
-from mmath.data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
-from mmath.data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
-from mmath.linearalgebra.Matrix import Matrix
+from mMath.data.cluster.gng.graph.Graph import Graph
+from mMath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
+from mMath.data.cluster.gng.Gng import Gng
+from mMath.data.cluster.gng.PlotBuilder import PlotBuilder as GngGraphPLotBuilder
+from mMath.data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
+from mMath.linearalgebra.Matrix import Matrix
 
 class TrajectoryExample:
     def run(self):

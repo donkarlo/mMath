@@ -1,6 +1,6 @@
-from mmath.data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
-from mmath.graph.Node import Node
-from mmath.linearalgebra.Vector import Vector
+from mMath.data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
+from mMath.graph.Node import Node
+from mMath.linearalgebra.Vector import Vector
 
 
 class EuclideanClosestNodeClusteringStrgy(GngClusteringStrgy):

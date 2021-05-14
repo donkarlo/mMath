@@ -1,6 +1,6 @@
 from typing import List
 
-from mmath.data.cluster.gng.graph.Node import Node
+from mMath.data.cluster.gng.graph.Node import Node
 
 
 class Edge:

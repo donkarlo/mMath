@@ -1,6 +1,6 @@
-from mmath.data.pdf.Pdf import Pdf
+from mMath.data.pdf.Pdf import Pdf
 
-from mmath.data.probability.Event import Event
+from mMath.data.probability.Event import Event
 
 
 class Uniform(Pdf):

@@ -1,15 +1,21 @@
 import math
+from typing import List
 
-from mmath.data.probability.Pdf import Pdf
+from mMath.data.probability.Event import Event
+from mMath.data.probability.Pdf import Pdf
+from mMath.data.probability.continous.Gaussian import Gaussian
+from mMath.linearalgebra.Vector import Vector
 
 
-class Normal(Pdf):
+class Normal(Gaussian):
     def __init__(self, mean: float, standardDeviation: float):
-        self.__mean = mean
-        self.__standardDeviation = standardDeviation
-        pass
+        ''''''
+        mean:Vector = Vector(mean)
+        standardDeviation:Vector = Vector(standardDeviation)
+        super.__init__(mean,standardDeviation)
 
-    def getValue(self, x: float):
-        y = (1 / (self.__standardDeviation * math.sqrt(2 * math.pi))) * math.e ** (
-                    -(x - self.__mean) ** 2 / (2 * self.__standardDeviation ** 2))
+    def getValueByEvent(self, input:float)->float:
+        ''''''
+        event:Event= Event(Vector(input))
+        y = super().getValueByEvent(event)
         return y

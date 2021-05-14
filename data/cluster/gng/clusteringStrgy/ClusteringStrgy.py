@@ -1,8 +1,8 @@
 from typing import List
 
-from mmath.data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
-from mmath.data.cluster.gng.graph.Graph import Graph
-from mmath.linearalgebra.Matrix import Matrix
+from mMath.data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
+from mMath.data.cluster.gng.graph.Graph import Graph
+from mMath.linearalgebra.Matrix import Matrix
 
 
 class ClusteringStrgy(MainClusteringStrgy):

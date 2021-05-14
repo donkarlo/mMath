@@ -1,4 +1,4 @@
-from mmath.data.probability.Event import Event
+from mMath.data.probability.Event import Event
 class Event:
     def __init__(self):
         pass

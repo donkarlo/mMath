@@ -1,6 +1,6 @@
 from typing import Set
 
 
-class StatesSet:
+class Set:
     def __init__(self,statesCollection:Set):
         self.__statesCollection = statesCollection

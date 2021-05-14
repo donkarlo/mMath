@@ -1,4 +1,4 @@
-from mmath.linearalgebra.Matrix import Matrix
+from mMath.linearalgebra.Matrix import Matrix
 
 
 class TransitionMatrix(Matrix):

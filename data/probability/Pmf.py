@@ -1,4 +1,4 @@
-from mmath.data.pdf.Pdf import Pdf
+from mMath.data.pdf.Pdf import Pdf
 
 
 class Pmf:

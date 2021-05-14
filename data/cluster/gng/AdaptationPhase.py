@@ -1,12 +1,12 @@
 from random import sample
 from typing import List
 
-from mmath.algorithm.RunableInterface import RunableInterface
-from mmath.data.cluster.gng.graph.Edge import Edge
-from mmath.data.cluster.gng.graph.Graph import Graph
-from mmath.data.cluster.gng.graph.Node import Node
-from mmath.linearalgebra.Matrix import Matrix
-from mmath.linearalgebra.Vector import Vector
+from mMath.algorithm.RunableInterface import RunableInterface
+from mMath.data.cluster.gng.graph.Edge import Edge
+from mMath.data.cluster.gng.graph.Graph import Graph
+from mMath.data.cluster.gng.graph.Node import Node
+from mMath.linearalgebra.Matrix import Matrix
+from mMath.linearalgebra.Vector import Vector
 
 
 class AdaptationPhase(RunableInterface):

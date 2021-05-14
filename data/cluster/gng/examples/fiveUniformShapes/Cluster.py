@@ -1,8 +1,8 @@
-from mmath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
-from mmath.data.cluster.gng.Gng import Gng
-from mmath.data.cluster.gng.PlotBuilder import PlotBuilder
-from mmath.data.cluster.gng.examples.fiveUniformShapes.Builder import Builder
-from mmath.linearalgebra.Matrix import Matrix
+from mMath.data.cluster.gng.clusteringStrgy.EuclideanClosestNodeClusteringStrgy import EuclideanClosestNodeClusteringStrgy
+from mMath.data.cluster.gng.Gng import Gng
+from mMath.data.cluster.gng.PlotBuilder import PlotBuilder
+from mMath.data.cluster.gng.examples.fiveUniformShapes.Builder import Builder
+from mMath.linearalgebra.Matrix import Matrix
 
 #All points can be
 shapeBuilder = Builder()

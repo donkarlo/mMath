@@ -1,6 +1,6 @@
 import uuid
 
-from mmath.linearalgebra.Vector import Vector
+from mMath.linearalgebra.Vector import Vector
 
 
 class Node:

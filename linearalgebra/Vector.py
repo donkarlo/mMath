@@ -1,8 +1,8 @@
 import numpy as np
 from collections.abc import Iterable
 
-from mmath.linearalgebra import Vector
-from mmath.linearalgebra.Matrix import Matrix
+from mMath.linearalgebra import Vector
+from mMath.linearalgebra.Matrix import Matrix
 
 
 class Vector(Matrix):

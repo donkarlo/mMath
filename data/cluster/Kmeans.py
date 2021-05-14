@@ -1,4 +1,4 @@
-from mmath.data.cluster.ClusteringStrgy import ClusteringStrgy
+from mMath.data.cluster.ClusteringStrgy import ClusteringStrgy
 
 
 class Kmeans(ClusteringStrgy):

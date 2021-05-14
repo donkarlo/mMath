@@ -1,13 +1,10 @@
-from mmath.data.timeSerie.stochasticProcess.StochasticProcess import StochasticProcess
-from mmath.data.timeSerie.stochasticProcess.markov.SatesSet import StatesSet
+from mMath.data.timeSerie.stochasticProcess.StochasticProcess import StochasticProcess
+from mMath.data.timeSerie.stochasticProcess.markov.TransitionMatrix import TransitionMatrix
+from mMath.data.timeSerie.stochasticProcess.markov.state.Set import Set
 
 
 class MarkovChain(StochasticProcess):
     ''''''
-    def __init__(self,statesSet:StatesSet):
+    def __init__(self, statesSet:Set, transitionMatrix:TransitionMatrix):
         self.__statesSet = statesSet
-    def isMarkov(self,tolerance:float)->bool:
-        pass
-    def testMarkov(self)->float:
-        '''How much the current state depends on previous state only'''
-        pass
+        self.transitionMatrix = transitionMatrix

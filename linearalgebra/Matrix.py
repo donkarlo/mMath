@@ -3,8 +3,8 @@ from typing import List
 
 import numpy as np
 
-from mmath.linearalgebra import Matrix
-from mmath.linearalgebra.Vector import Vector
+from mMath.linearalgebra import Matrix
+from mMath.linearalgebra.Vector import Vector
 
 
 class Matrix():
@@ -30,6 +30,7 @@ class Matrix():
 
 
     def updateRows(self,rows: Iterable):
+        ''''''
         self._setNpRows(rows)
 
 

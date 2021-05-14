@@ -1,6 +1,6 @@
 from typing import List
 
-from state.State import State
+from mDynamicSystem.state.State import State
 
 
 class FiniteState:

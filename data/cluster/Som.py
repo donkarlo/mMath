@@ -1,4 +1,4 @@
-from mmath.data.cluster import ClusteringStrgy
+from mMath.data.cluster import ClusteringStrgy
 
 
 class Som(ClusteringStrgy):
