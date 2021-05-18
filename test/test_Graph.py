@@ -1,9 +1,9 @@
 import unittest
 from typing import List
 
-from data.cluster.gng.graph.Node import Node
-from linearalgebra.Vector import Vector
-from test.GraphBuilder import GraphBuilder
+from mMath.data.cluster.gng.graph.Node import Node
+from mMath.linearAlgebra.Vector import Vector
+from mMath.test.GraphBuilder import GraphBuilder
 
 
 class TestGraph(unittest.TestCase):

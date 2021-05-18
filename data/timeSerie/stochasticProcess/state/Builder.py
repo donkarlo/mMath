@@ -1,8 +1,8 @@
 from typing import List
 
-from mMath.data.timeSerie.stochasticProcess.markov.state.Serie import Serie
-from mMath.data.timeSerie.stochasticProcess.markov.state.Set import Set
-from mMath.data.timeSerie.stochasticProcess.markov.state.State import State
+from mMath.data.timeSerie.stochasticProcess.state.Serie import Serie
+from mMath.data.timeSerie.stochasticProcess.state.Set import Set
+from mMath.data.timeSerie.stochasticProcess.state.State import State
 
 
 class Builder:

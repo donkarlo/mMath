@@ -1,4 +1,4 @@
-from mMath.linearalgebra.Matrix import Matrix
+from mMath.linearAlgebra.matrix.Matrix import Matrix
 from mDynamicSystem.measurement import ObservationStateSerie
 
 

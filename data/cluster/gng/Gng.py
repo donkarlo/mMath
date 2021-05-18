@@ -1,5 +1,8 @@
+from typing import List
+
 import numpy as np
 
+from mMath.data.cluster.gng.Cluster import Cluster
 from mMath.data.cluster.ClusteringStrgy import ClusteringStrgy as MainClusteringStrgy
 from mMath.data.cluster.gng.clusteringStrgy.ClusteringStrgy import ClusteringStrgy as GngClusteringStrgy
 from mMath.data.cluster.gng.AdaptationPhase import AdaptationPhase
@@ -8,8 +11,8 @@ from mMath.algorithm.PhasableInterface import PhasableInterface
 from mMath.data.cluster.gng.graph.Edge import Edge
 from mMath.data.cluster.gng.graph.Graph import Graph
 from mMath.data.cluster.gng.graph.Node import Node
-from mMath.linearalgebra.Matrix import Matrix
-from mMath.linearalgebra.Vector import Vector
+from mMath.linearAlgebra.matrix.Matrix import Matrix
+from mMath.linearAlgebra.Vector import Vector
 
 
 class Gng(PhasableInterface,MainClusteringStrgy):
@@ -45,7 +48,7 @@ class Gng(PhasableInterface,MainClusteringStrgy):
         '''
         # super().__init__(rawInputData)
 
-        #it will be later converted to Matrix
+        #it will be later converted to matrix
         self.__inpRowsMatrix: Matrix = inpRowsMatrix
         self.__closestNodeMovementRateTowardCurInpVec: float = closestNodeMovementRateTowardCurInpVec
         self.__neighborNodesOfClosestNodeMovementRateTowardCurInpVec: float = connectedNodesToClosestNodeMovementRateTowardCurInpVec
@@ -62,7 +65,7 @@ class Gng(PhasableInterface,MainClusteringStrgy):
         #Will be set in getClusters
         self.__gngClusteringStrgy:GngClusteringStrgy = None
 
-    def getClusters(self, gngClusteringStrgy:GngClusteringStrgy):
+    def getClusters(self, gngClusteringStrgy:GngClusteringStrgy)->List[Cluster]:
         if type(self.__gngClusteringStrgy) == None or type(self.__gngClusteringStrgy) != type(gngClusteringStrgy):
             self.__gngClusteringStrgy = gngClusteringStrgy
             self._doSetClusters()

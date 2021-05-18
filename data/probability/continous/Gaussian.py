@@ -1,10 +1,9 @@
 import math
-from typing import List
 
 from mMath.data.probability.Event import Event
 from mMath.data.probability.Pdf import Pdf
-from mMath.linearalgebra.Matrix import Matrix
-from mMath.linearalgebra.Vector import Vector
+from mMath.linearAlgebra.matrix.Matrix import Matrix
+from mMath.linearAlgebra.Vector import Vector
 
 
 class Gaussian(Pdf):
@@ -23,3 +22,9 @@ class Gaussian(Pdf):
         y = (1 / (self.__covariance * math.sqrt(2 * math.pi))) * math.e ** (
                 -(event - self.__mean) ** 2 / (2 * self.__covariance ** 2))
         return y
+
+    def getMean(self):
+        return self.__mean
+
+    def getCovariance(self):
+        return self.__covariance

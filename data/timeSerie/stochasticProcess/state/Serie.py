@@ -1,11 +1,11 @@
 from typing import List
 
-from mMath.data.timeSerie.stochasticProcess.markov.state import State
+from mMath.data.timeSerie.stochasticProcess.state import State
 
 
 class Serie:
     ''''''
-    def __init__(self,stateEventSequence:List[State]):
+    def __init__(self, stateEventSequence:List[State]):
         self.__stateEventSequence:List[State] = stateEventSequence
 
     def getStateEventSequence(self) -> List[State]:

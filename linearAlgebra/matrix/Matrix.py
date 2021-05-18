@@ -3,8 +3,8 @@ from typing import List
 
 import numpy as np
 
-from mMath.linearalgebra import Matrix
-from mMath.linearalgebra.Vector import Vector
+from mMath.linearAlgebra import matrix
+from mMath.linearAlgebra.Vector import Vector
 
 
 class Matrix():
@@ -25,6 +25,8 @@ class Matrix():
                 self.__npRows = np.asarray(vecRows)
             else:
                 self.__npRows = np.asarray(rows)
+        elif type(rows) is dict:
+            self.__npRows = rows
         elif type(rows) is np.ndarray:
             self.__npRows = rows
 
@@ -34,7 +36,7 @@ class Matrix():
         self._setNpRows(rows)
 
 
-    def __mul__(self, other) -> Matrix:
+    def __mul__(self, other) -> matrix:
         ''''''
         npResult = None
         if type(other) in (float, np.float64, int):
@@ -42,20 +44,20 @@ class Matrix():
         elif type(other) in (Matrix):
             npResult = np.dot(self.__npRows, other)
         else:
-            raise Exception("Matrix multiply dosent understand how to treat 'Other' data type")
+            raise Exception("matrix multiply dosent understand how to treat 'Other' data type")
         npResult = Matrix(npResult)
         return npResult
 
-    def __add__(self, other: Matrix) -> Matrix:
+    def __add__(self, other: matrix) -> matrix:
         ''''''
         npAdd = np.add(self.getNpRows(), other.getNpRows())
         addMat = Matrix(npAdd)
         return addMat
 
-    def __getInverse(self) -> Matrix:
+    def __getInverse(self) -> matrix:
         pass
 
-    def __pow__(self, power, modulo=None) -> Matrix:
+    def __pow__(self, power, modulo=None) -> matrix:
         if power == -1:
             return self.getInverse()
         elif power == 'T':
@@ -64,7 +66,7 @@ class Matrix():
             if power>0:
                 pass
 
-    def __sub__(self, other: Matrix) -> Matrix:
+    def __sub__(self, other: matrix) -> matrix:
         '''over writes subtract'''
         npSub = np.subtract(self.getNpRows(), other.getNpRows())
         subMat = Matrix(npSub)
@@ -80,11 +82,11 @@ class Matrix():
     def getNpColByIndex(self, colIndex: int) -> np.ndarray:
         return self.__npRows[:, colIndex]
 
-    def transpose(m: Matrix) -> Matrix:
+    def transpose(m: matrix) -> matrix:
         '''Transpose'''
         pass
 
-    def getIdentity(dimention: int) -> Matrix:
+    def getIdentity(dimention: int) -> matrix:
         pass
 
     def getNpRows(self) -> np.ndarray:

@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 from mMath.data.cluster.gng.graph.Graph import Graph
 from mMath.data.cluster.gng.graph.PlotBuilder import PlotBuilder as GraphPlotBuilder
-from mMath.linearalgebra.Matrix import Matrix
+from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 
 class PlotBuilder(GraphPlotBuilder):
@@ -27,8 +27,12 @@ class PlotBuilder(GraphPlotBuilder):
         self.add2DEdges()
         self.getPlot().show()
 
-    def showAll3D(self,clusters):
-        ''''''
+    def showAll3D(self,clusters:dict):
+        '''
+
+        :param clusters:dict
+        :return:
+        '''
         fig = pyplot.figure()
         ax = Axes3D(fig)
 
@@ -39,7 +43,7 @@ class PlotBuilder(GraphPlotBuilder):
         # ax.scatter(xInpVecs, yInpVecs, zInpVecs, c='lightblue', marker='.', alpha=0.04, linewidth=5)
 
         for clusterId in clusters:
-            clusterMatrix:Matrix = Matrix(clusters[clusterId])
+            clusterMatrix:Matrix = Matrix(clusters[clusterId].getVectors())
             xClusterInpVecs = clusterMatrix.getNpColByIndex(0)
             yClusterInpVecs = clusterMatrix.getNpColByIndex(1)
             zClusterInpVecs = clusterMatrix.getNpColByIndex(2)
@@ -62,8 +66,6 @@ class PlotBuilder(GraphPlotBuilder):
 
 
         pyplot.show()
-
-    import random
 
     def __getRandomColor(self):
         return [rand.uniform(0, 1.0) for i in [1, 2, 3]]

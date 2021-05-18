@@ -1,6 +1,8 @@
 import abc
 from typing import List
 
+from mMath.data.cluster.gng.Cluster import Cluster
+
 
 class ClusteringStrgy(metaclass=abc.ABCMeta):
     """
@@ -9,7 +11,7 @@ class ClusteringStrgy(metaclass=abc.ABCMeta):
 
     def __init__(self, inpData):
         self._inpData = inpData
-        self._clusters = None
+        self._clusters:List[Cluster] = None
 
     def getClusters(self) -> List:
         """Returns the clusters

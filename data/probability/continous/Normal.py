@@ -4,7 +4,7 @@ from typing import List
 from mMath.data.probability.Event import Event
 from mMath.data.probability.Pdf import Pdf
 from mMath.data.probability.continous.Gaussian import Gaussian
-from mMath.linearalgebra.Vector import Vector
+from mMath.linearAlgebra.Vector import Vector
 
 
 class Normal(Gaussian):

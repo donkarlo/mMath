@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from linearalgebra.Vector import Vector
+from mMath.linearAlgebra.Vector import Vector
 
 
 class TestVector(unittest.TestCase):

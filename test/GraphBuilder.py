@@ -1,7 +1,7 @@
 from mMath.data.cluster.gng.graph.Edge import Edge
 from mMath.data.cluster.gng.graph.Graph import Graph
 from mMath.data.cluster.gng.graph.Node import Node
-from mMath.linearalgebra.Vector import Vector
+from mMath.linearAlgebra.Vector import Vector
 
 
 class GraphBuilder:

@@ -1,9 +1,13 @@
 import unittest
 from unittest import TestCase
 
-from data.cluster.gng.Gng import Gng
-from data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
-from linearalgebra.Matrix import Matrix
+
+
+from mMath.data.cluster.gng.Gng import Gng
+from mMath.data.cluster.gng.clusteringStrgy.EuclideanClosestNode.ClusteringStrgy import \
+    ClusteringStrgy
+from mMath.data.cluster.gng.examples.trajectory.ThreeDPosVelFile import ThreeDPosVelFile
+from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 
 class TestGng(TestCase):
@@ -13,7 +17,8 @@ class TestGng(TestCase):
     npInpRows = t3dposVel.getNpArr(1000)
     npInpRowsMatrix = Matrix(npInpRows)
     gng = Gng(npInpRowsMatrix, maxNodesNum=30)
-    gng.getClusters()
+    cluterStrgy = ClusteringStrgy()
+    gng.getClusters(cluterStrgy)
     graph = gng.getGraph()
 
     def test_noEdglessNodesLeft(self):
