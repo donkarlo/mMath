@@ -1,6 +1,6 @@
 from mMath.data.probability.Pdf import Pdf
 from mMath.data.probability.Population import Population
-from mMath.data.probability.Event import Event
+from mMath.data.probability.event.Event import Event
 
 
 class Pdf(Pdf):

@@ -1,5 +1,6 @@
-from trajectory.gen.ParamLinePointGenerator import *
-from trajectory.gen.ParamShapePointGeneratorComposit import *
+from mMath.trajectory.ParamShapeLine import ParamShapeLine
+from mMath.trajectory.gen.ParamLinePointGenerator import *
+from mMath.trajectory.gen.ParamShapePointGeneratorComposit import *
 
 
 class TwoStepsParamShapePointGenerator(ParamShapePointGeneratorComposit):

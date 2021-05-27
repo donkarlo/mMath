@@ -1,4 +1,4 @@
-from trajectory.ParamShape import ParamShape
+from mMath.trajectory.ParamShape import ParamShape
 
 
 class ParamShapeLine(ParamShape):

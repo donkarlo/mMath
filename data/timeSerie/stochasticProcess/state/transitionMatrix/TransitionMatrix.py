@@ -1,3 +1,5 @@
+import uuid
+
 from mDynamicSystem.state.State import State
 
 from mMath.linearAlgebra.matrix.Matrix import Matrix
@@ -5,9 +7,12 @@ from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 class TransitionMatrix(Matrix):
     def __init__(self, dictRows: dict):
-        self.__dictRows = dictRows
+        self.__dictRows:dict = dictRows
 
-    def getNextMostProbableStateByState(self, state:State):
+    def getNextMostProbableStateIdByStateId(self, stateId:State)->uuid.UUID:
         ''''''
-        maxInColsOfARowState = max(self.__dictRows[state.getId()])
-        return maxInColsOfARowState
+        maxStateId = list(self.__dictRows[stateId].keys())[0]
+        for stateId in self.__dictRows[stateId]:
+            if self.__dictRows[stateId][stateId]>self.__dictRows[stateId][maxStateId]:
+                maxStateId = stateId
+        return maxStateId

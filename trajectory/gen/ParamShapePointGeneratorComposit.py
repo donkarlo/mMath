@@ -1,5 +1,5 @@
-from trajectory.ParamShapeLine import *
-from trajectory.Point import *
+from mMath.trajectory.ParamShapeLine import *
+from mMath.trajectory.Point import *
 
 
 class ParamShapePointGeneratorComponent:

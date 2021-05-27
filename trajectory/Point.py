@@ -6,8 +6,8 @@ class Point:
     To represent a point in R^N
     '''
 
-    def __init__(self, cords=[]):
-        self._cords = cords
+    def __init__(self, cords):
+        self._cords = cords if cords is not None else []
 
     def getCords(self):
         return self._cords
@@ -64,7 +64,7 @@ class Points:
     def addDim(self, defaultVal):
         newPointsList = []
         for point in self.getPointsList():
-            point.getCords().appendMeasurement(defaultVal)
+            point.getCords().append(defaultVal)
             newPointsList.append(point)
         self._pointsList = newPointsList
 

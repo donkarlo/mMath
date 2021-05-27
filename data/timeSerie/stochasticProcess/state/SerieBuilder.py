@@ -5,19 +5,19 @@ from mMath.data.timeSerie.stochasticProcess.state.Set import Set
 from mMath.data.timeSerie.stochasticProcess.state.State import State
 
 
-class Builder:
+class SerieBuilder:
     ''''''
-    def __init__(self,stateSet:Set):
-        self.__stateEventSequence: List[State] = None
+    def __init__(self,stateSet:Set=None):
+        self.__stateSequence: List[State] = []
         self.__stateSet:Set = stateSet
 
-    def appendStateEvent(self, state: State):
+    def appendState(self, state: State):
         '''
         @todo check if it exists in States set
         :param state:
         :return:
         '''
-        self.__stateEventSequence.append(state)
+        self.__stateSequence.append(state)
 
     def getSerie(self):
-        return Serie(self.__stateEventSequence)
+        return Serie(self.__stateSequence)

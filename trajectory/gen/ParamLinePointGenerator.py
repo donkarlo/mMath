@@ -1,6 +1,6 @@
-from trajectory.ParamShapeLine import *
-from trajectory.Point import *
-from trajectory.gen.ParamShapePointGeneratorComposit import ParamShapePointGeneratorLeaf
+from mMath.trajectory.ParamShapeLine import *
+from mMath.trajectory.Point import *
+from mMath.trajectory.gen.ParamShapePointGeneratorComposit import ParamShapePointGeneratorLeaf
 
 
 class ParamLinePointGenerator(ParamShapePointGeneratorLeaf):

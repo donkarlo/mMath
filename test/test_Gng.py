@@ -14,9 +14,9 @@ class TestGng(TestCase):
     # shared with all TestGng
     fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-measurement-from-gps.txt"
     t3dposVel = ThreeDPosVelFile(fileDataBank)
-    npInpRows = t3dposVel.getNpArr(1000)
+    npInpRows = t3dposVel.getNpArr(10)
     npInpRowsMatrix = Matrix(npInpRows)
-    gng = Gng(npInpRowsMatrix, maxNodesNum=30)
+    gng = Gng(npInpRowsMatrix, maxNodesNum=5)
     cluterStrgy = ClusteringStrgy()
     gng.getClusters(cluterStrgy)
     graph = gng.getGraph()

@@ -1,22 +1,25 @@
 from typing import List
 
-from mMath.data.timeSerie.stochasticProcess.state import State
+from mMath.data.timeSerie.stochasticProcess.state.State import State
 
 
 class Serie:
     ''''''
-    def __init__(self, stateEventSequence:List[State]):
-        self.__stateEventSequence:List[State] = stateEventSequence
+    def __init__(self, stateSequence:List[State]):
+        self.__stateSequence:List[State] = stateSequence
 
-    def getStateEventSequence(self) -> List[State]:
-        return self.__stateEventSequence
+    def getStates(self)->List[State]:
+        return self.__stateSequence
 
-    def getLastStateInStateEventSequence(self) -> State:
+    def getLastState(self) -> State:
         ''''''
-        return self.__stateEventSequence[self.getLastStateEventIndex()]
+        return self.__stateSequence[self.getLastStateIndex()]
 
-    def getLastStateEventIndex(self):
-        return len(self.__stateEventSequence) - 1
+    def getLastStateIndex(self):
+        return len(self.__stateSequence) - 1
 
-    def getStateEventByIndex(self,index:int):
-        return self.__stateEventSequence[0]
+    def getStateByIndex(self, index:int):
+        return self.__stateSequence[index]
+
+    def getLength(self):
+        return len(self.__stateSequence)
