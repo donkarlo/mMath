@@ -1,5 +1,5 @@
 from mMath.data.probability.discrete.Pdf import Pdf
-from mMath.data.probability.event.Event import Event
+from mMath.data.probability.event.Vector import Vector
 from mMath.linearAlgebra.Vector import Vector
 
 
@@ -12,6 +12,6 @@ class Uniform(Pdf):
         ''''''
         pass
 
-    def getValueByEvent(self, e:Event):
+    def getValueByEvent(self, e:Vector):
         ''''''
         pass

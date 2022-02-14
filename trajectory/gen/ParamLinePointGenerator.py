@@ -21,13 +21,13 @@ class ParamLinePointGenerator(ParamShapePointGeneratorLeaf):
         super(ParamLinePointGenerator, self).__init__(paramShape, distanceInterval, lowerBand, upperband)
 
     def getDim(self) -> int:
-        return len(self._paramLine.getNVec())
+        return len(self._paramLine.getNormalVector())
 
     def _generatePoints(self) -> None:
         t = self._lowerBand
         while (t <= self._upperBand):
             cords = []
             for dimCtr in range(self.getDim()):
-                cords.append(self._paramLine._nVec[dimCtr] * t + self._paramLine._cVec[dimCtr])
+                cords.append(self._paramLine._normalVector[dimCtr] * t + self._paramLine._startPoint[dimCtr])
             self._points.add(Point(cords))
             t += self._distanceInterval

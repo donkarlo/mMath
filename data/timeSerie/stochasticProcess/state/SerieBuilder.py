@@ -1,15 +1,15 @@
 from typing import List
 
 from mMath.data.timeSerie.stochasticProcess.state.Serie import Serie
-from mMath.data.timeSerie.stochasticProcess.state.Set import Set
+from mMath.data.timeSerie.stochasticProcess.state.StateSpace import StateSpace
 from mMath.data.timeSerie.stochasticProcess.state.State import State
 
 
 class SerieBuilder:
     ''''''
-    def __init__(self,stateSet:Set=None):
-        self.__stateSequence: List[State] = []
-        self.__stateSet:Set = stateSet
+    def __init__(self, stateSpace:StateSpace):
+        self._stateList: List[State] = []
+        self._stateSpace:StateSpace = stateSpace
 
     def appendState(self, state: State):
         '''
@@ -17,7 +17,7 @@ class SerieBuilder:
         :param state:
         :return:
         '''
-        self.__stateSequence.append(state)
+        self._stateList.append(state)
 
-    def getSerie(self):
-        return Serie(self.__stateSequence)
+    def getSerie(self)->Serie:
+        return Serie(self._stateList, self._stateSpace)

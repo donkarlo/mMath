@@ -8,9 +8,7 @@ from mMath.linearAlgebra.matrix.Matrix import Matrix
 shapeBuilder = Builder()
 allPoints = shapeBuilder.getAllPoints()
 inpRowsMatrix = Matrix(allPoints)
-gng = Gng(inpRowsMatrix,maxNodesNum=150,maxIterationsNum=200)
+gng = Gng(inpRowsMatrix,maxNodesNum=150,maxIterationsNum=300)
 gng.getGraph().report()
 plotter = PlotBuilder(gng.getInpRowsMatrix(),gng.getGraph())
-
-cluterStrgy = ClusteringStrgy()
 plotter.showAll2D()

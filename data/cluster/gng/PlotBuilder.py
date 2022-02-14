@@ -43,11 +43,14 @@ class PlotBuilder(GraphPlotBuilder):
         # ax.scatter(xInpVecs, yInpVecs, zInpVecs, c='lightblue', marker='.', alpha=0.04, linewidth=5)
 
         for clusterId in clusters:
-            clusterMatrix:Matrix = Matrix(clusters[clusterId].getVectors())
+            clusterMatrix:Matrix = Matrix(clusters[clusterId].getVectors().getVectorsList())
             xClusterInpVecs = clusterMatrix.getNpColByIndex(0)
             yClusterInpVecs = clusterMatrix.getNpColByIndex(1)
             zClusterInpVecs = clusterMatrix.getNpColByIndex(2)
+            # @todo un/comment this line for 3d
             ax.scatter(xClusterInpVecs, yClusterInpVecs, zClusterInpVecs, color=self.__getRandomColor(), marker='.', alpha=0.04, linewidth=5)
+            #@todo un/comment this line for 2d
+            # ax.scatter(xClusterInpVecs, yClusterInpVecs, color=self.__getRandomColor(), marker='.', alpha=0.04, linewidth=5)
 
         #nodes
         xNodes = self.__graph.getNpNodesComponentsByIndex(0)

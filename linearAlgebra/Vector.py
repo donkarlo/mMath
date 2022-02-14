@@ -1,3 +1,5 @@
+from typing import List
+
 import numpy as np
 from collections.abc import Iterable
 
@@ -31,11 +33,21 @@ class Vector(Matrix):
     def updateComponents(self,components:Iterable):
         self._setNpRows(components)
 
+    def updateComponentByIndex(self,index:int,value:float):
+        self._npRows[index] = value
+
     def getNpRow(self) -> np.ndarray:
         rows = []
         for row in self.getNpRows():
             rows.append(row[0])
         return np.asarray(rows)
+
+    def getInListRowForm(self)->List[float]:
+        listRowForm = self.getNpRow().tolist()
+        return listRowForm
+
+    def getNorm(self)->np.float64:
+        return np.linalg.norm(self.getNpRow())
 
     def getDistanceFrom(self, vec: Vector) -> float:
         return np.linalg.norm(self.getNpRow() - vec.getNpRow())

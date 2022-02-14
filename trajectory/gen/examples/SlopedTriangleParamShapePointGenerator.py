@@ -26,9 +26,7 @@ class SlopedTriangleParamShapePointGenerator(ParamShapePointGeneratorComposit):
         self \
             .add(l1pg) \
             .add(l2pg) \
-            .add(l3pg) \
- \
- \
+            .add(l3pg)
 tspsg = SlopedTriangleParamShapePointGenerator(0.5)
 tspsg.plot3DPoints()
 

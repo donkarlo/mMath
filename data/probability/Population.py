@@ -10,3 +10,4 @@ class Population(abc.ABCMeta):
     @abc.abstractmethod
     def getStandardVariation(self):
         pass
+

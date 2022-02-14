@@ -12,7 +12,7 @@ from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 class TestGng(TestCase):
     # shared with all TestGng
-    fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-measurement-from-gps.txt"
+    fileDataBank = "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/ctumrs/two-step/manip/pos-vel-obs-from-gps.txt"
     t3dposVel = ThreeDPosVelFile(fileDataBank)
     npInpRows = t3dposVel.getNpArr(10)
     npInpRowsMatrix = Matrix(npInpRows)

@@ -5,5 +5,6 @@ from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 class Square(Matrix):
     def __init__(self,rows: Iterable):
-        super().__init__()
+        super().__init__(rows)
+
 

@@ -1,6 +1,6 @@
 from typing import List
 
-from mMath.data.probability.event.Event import Event
+from mMath.data.probability.event.Vector import Vector
 from mMath.data.probability.Pdf import Pdf
 from mMath.data.probability.event.Point import PointEvent
 from mMath.linearAlgebra.matrix.Matrix import Matrix
@@ -16,7 +16,7 @@ class Gaussian(Pdf):
         self.__mean:Vector = mean
         self.__covariance:Matrix = covariance
 
-    def getValueByEvent(self, event: Event)->float:
+    def getValueAt(self, event: Vector)->float:
         '''
         :param event:
         :return:
@@ -47,7 +47,7 @@ class Gaussian(Pdf):
         return sampleVecs
 
     def getASampleValue(self):
-        return self.getValueByEvent(self.getASample())
+        return self.getValueAt(self.getASample())
 
     def getMean(self)->Vector:
         return self.__mean

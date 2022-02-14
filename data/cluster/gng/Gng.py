@@ -13,6 +13,7 @@ from mMath.data.cluster.gng.graph.Graph import Graph
 from mMath.data.cluster.gng.graph.Node import Node
 from mMath.linearAlgebra.matrix.Matrix import Matrix
 from mMath.linearAlgebra.Vector import Vector
+from sklearn import preprocessing
 
 
 class Gng(PhasableInterface,MainClusteringStrgy):
@@ -131,6 +132,13 @@ class Gng(PhasableInterface,MainClusteringStrgy):
         dataNorm = self.__inpRowsMatrix.getNpRows() - np.tile(minOfRowsArr, (self.__inpRowsMatrix.getNpRows().shape[0], 1))
         maxDataNorm = np.max(dataNorm, axis=0)
         self.__inpRowsMatrix.updateRows(dataNorm / np.tile(maxDataNorm, (self.__inpRowsMatrix.getNpRows().shape[0], 1)))
+        #
+        # min = np.amin(self.__inpRowsMatrix.getNpRows())
+        # max = np.amax(self.__inpRowsMatrix.getNpRows())
+        # npRowNorm = (self.__inpRowsMatrix.getNpRows()-min)/(max-min)
+        # self.__inpRowsMatrix.updateRows(npRowNorm)
+
+
 
     def getInpRowsMatrix(self) -> Matrix:
         ''''''

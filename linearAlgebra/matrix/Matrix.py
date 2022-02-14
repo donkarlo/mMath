@@ -1,5 +1,5 @@
 from collections.abc import Iterable
-from typing import List
+from typing import List, Tuple
 
 import numpy as np
 
@@ -8,7 +8,11 @@ from mMath.linearAlgebra.Vector import Vector
 
 
 class Matrix():
-    '''todo: Each matrix is composed of columns of vectors. As such replace the inheritence between matrix and vector with composition'''
+    '''
+    @use matrixes only for cases in which operations such as + * etc are meaningful. Dont use it to represent data
+    @todo: Each matrix is composed of columns of vectors. As such replace the inheritence between matrix and vector with composition
+
+    '''
 
     def __init__(self, rows: Iterable):
         ''''''
@@ -16,19 +20,19 @@ class Matrix():
 
     def _setNpRows(self,rows: Iterable):
         '''A matrix is formed of many rows'''
-        self.__npRows: np.ndarray = None
+        self._npRows: np.ndarray = None
         if type(rows) is list:
             if isinstance(rows[0],Vector.Vector):
                 vecRows = []
                 for vecRow in rows:
                     vecRows.append(vecRow.getNpRow())
-                self.__npRows = np.asarray(vecRows)
+                self._npRows = np.asarray(vecRows)
             else:
-                self.__npRows = np.asarray(rows)
+                self._npRows = np.asarray(rows)
         elif type(rows) is dict:
-            self.__npRows = rows
+            self._npRows = rows
         elif type(rows) is np.ndarray:
-            self.__npRows = rows
+            self._npRows = rows
 
 
     def updateRows(self,rows: Iterable):
@@ -40,9 +44,9 @@ class Matrix():
         ''''''
         npResult = None
         if type(other) in (float, np.float64, int):
-            npResult = other * self.__npRows
+            npResult = other * self._npRows
         elif type(other) in (Matrix):
-            npResult = np.dot(self.__npRows, other)
+            npResult = np.dot(self._npRows, other)
         else:
             raise Exception("matrix multiply dosent understand how to treat 'Other' data type")
         npResult = Matrix(npResult)
@@ -74,13 +78,13 @@ class Matrix():
 
     def __getitem__(self, index: int):
         '''for brackets []'''
-        return self.__npRows[index]
+        return self._npRows[index]
 
     def getNpRowByIndex(self, index: int):
-        return self.__npRows[index]
+        return self._npRows[index]
 
     def getNpColByIndex(self, colIndex: int) -> np.ndarray:
-        return self.__npRows[:, colIndex]
+        return self._npRows[:, colIndex]
 
     def transpose(m: matrix) -> matrix:
         '''Transpose'''
@@ -90,10 +94,13 @@ class Matrix():
         pass
 
     def getNpRows(self) -> np.ndarray:
-        return self.__npRows
+        return self._npRows
 
     def getRowsNum(self) -> int:
-        return self.__npRows.shape[0]
+        return self._npRows.shape[0]
 
     def getColsNum(self) -> int:
-        return self.__npRows.shape[1]
+        return self._npRows.shape[1]
+
+    def getDimensions(self)->Tuple[int]:
+        return self.getNpRows().shape

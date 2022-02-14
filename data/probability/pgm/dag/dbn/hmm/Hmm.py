@@ -1,5 +1,5 @@
 from mMath.linearAlgebra.matrix.Matrix import Matrix
-from mDynamicSystem.measurement import ObservationStateSerie
+from mDynamicSystem.obs import ObservationStateSerie
 
 
 class Hmm():

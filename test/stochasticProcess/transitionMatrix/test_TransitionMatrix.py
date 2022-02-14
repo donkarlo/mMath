@@ -20,6 +20,8 @@ class TestTransitionMatrix(TestCase):
         state1 = State()
         state2 = State()
         state3 = State()
+        stateSet = (state1,state2,state3)
+
         stateSerieBuilder = SerieBuilder()
 
         stateSerieBuilder.appendState(state1)
@@ -42,12 +44,10 @@ class TestTransitionMatrix(TestCase):
         stateSerieBuilder.appendState(state3)
         stateSerieBuilder.appendState(state2)
 
-        self.__stateSerie: Serie = stateSerieBuilder.getSerie()
-        transMatrixBuilder = FromStateSerieBuilder(self.__stateSerie)
-        dict = transMatrixBuilder.getTransitionNpMatrix()
-
-        stateTrMat = TransitionMatrix(dict)
-        nextMostProbableStateId = stateTrMat.getNextMostProbableStateIdByState(state3.getId())
+        stateSerie: Serie = stateSerieBuilder.getSerie()
+        transMatrixBuilder = FromStateSerieBuilder(stateSerie,stateSet)
+        stateTrMat = transMatrixBuilder.getTransitionMatrix()
+        nextMostProbableStateId = stateTrMat.getNextMostProbableStateIdByStateId(state3.getId())
         self.assertEqual(nextMostProbableStateId, state2.getId())
 
 

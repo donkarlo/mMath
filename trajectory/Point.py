@@ -81,8 +81,9 @@ class Points:
         x = self.getDimAggregatedPoints()[0]
         y = self.getDimAggregatedPoints()[1]
         z = self.getDimAggregatedPoints()[2]
-        ax.scatter(x, y, z, c='r', marker='o')
-        ax.set_xlabel('X Label')
-        ax.set_ylabel('Y Label')
-        ax.set_zlabel('Z Label')
+        ax.scatter(x, y, z, c='r', marker='o', s=5)
+        ax.set_xlabel('$x_1$')
+        ax.set_ylabel('$x_2$')
+        ax.set_zlabel('$x_3$')
+        # ax.set_zlim3d(10, 20)
         plt.show()

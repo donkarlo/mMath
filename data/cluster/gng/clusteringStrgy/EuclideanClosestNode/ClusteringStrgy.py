@@ -15,7 +15,7 @@ class ClusteringStrgy(GngClusteringStrgy):
         It returns a dictionary so that the keys are node ids
         :return:dict a ditionary of clusters whose keys are nodes' ids
         '''
-        closestNodesClusters:List[Cluster] = {}
+        closestNodesClusters:dict = {}
         for loopingInpRow in self._inpDataRowsMatrix.getNpRows():
             loopingInpRowVec: Vector = Vector(loopingInpRow)
             nodeWithMinDsitance: Node = self._graph.getNodes()[0]
