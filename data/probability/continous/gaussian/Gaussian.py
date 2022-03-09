@@ -28,7 +28,7 @@ class Gaussian(Pdf):
         if type(event) is PointEvent:
             event:PointEvent
             var = multivariate_normal(mean=self.__mean, cov=self.__covariance)
-            return var.pdf(event)
+            return var.pdDataFrame(event)
 
 
 
