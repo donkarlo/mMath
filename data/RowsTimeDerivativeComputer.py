@@ -1,9 +1,9 @@
 import numpy as np
 
 
-class TabularDataTimeDerivativeComputer:
+class RowsTimeDerivativeComputer:
     @staticmethod
-    def computer(npTimePosRows:np.array, derivativeMul:float=1)->np.array:
+    def computer(npTimePosRows:np.array,velCoefficient:float=1)->np.array:
         '''
         This function assumes the first collumn is timestamp
         '''
@@ -24,13 +24,13 @@ class TabularDataTimeDerivativeComputer:
                 curPos = npTimePosRows[counter][1:]
                 diffPos = np.subtract(curPos,prvPos)
 
-                curVel = diffPos/diffTime
+                curVel = velCoefficient*diffPos/diffTime
                 curTimePosVel = np.hstack(np.array([curTime,curPos,curVel],dtype=object))
                 timePosVelRows.append(curTimePosVel)
                 if counter == 1:
                     timePosVelRows.insert(0,np.hstack(np.array([prvTime,prvPos,curVel],dtype=object)))
-
-        return np.array(timePosVelRows)
+        npTimePosVelRows = np.array(timePosVelRows)
+        return npTimePosVelRows
 
 
 
@@ -41,7 +41,7 @@ if __name__=="__main__":
         ,[3.1,7,4,2]
         ,[4.5,5,4,1]]
     )
-    npTimePosVelArr = TabularDataTimeDerivativeComputer.computer(npTbArr)
+    npTimePosVelArr = RowsTimeDerivativeComputer.computer(npTbArr)
     print(npTimePosVelArr)
 
 
