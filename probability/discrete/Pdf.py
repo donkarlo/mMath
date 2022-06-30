@@ -1,6 +1,6 @@
-from mMath.data.probability.Pdf import Pdf
-from mMath.data.probability.Population import Population
-from mMath.data.probability.event.Vector import Vector
+from mMath.probability.Pdf import Pdf
+from mMath.probability.Population import Population
+from mMath.probability.event.Vector import Vector
 
 
 class Pdf(Pdf):

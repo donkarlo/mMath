@@ -1,8 +1,8 @@
 from typing import List
 
-from mMath.data.probability.event.Vector import Vector
-from mMath.data.probability.Pdf import Pdf
-from mMath.data.probability.event.Point import PointEvent
+from mMath.probability.event.Vector import Vector
+from mMath.probability.Pdf import Pdf
+from mMath.probability.event.Point import PointEvent
 from mMath.linearAlgebra.matrix.Matrix import Matrix
 from mMath.linearAlgebra.Vector import Vector
 from scipy.stats import multivariate_normal

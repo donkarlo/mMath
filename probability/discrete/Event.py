@@ -1,6 +1,6 @@
 from typing import List
 
-from mMath.data.probability.event.Vector import Vector as MainEvent
+from mMath.probability.event.Vector import Vector as MainEvent
 
 
 class Event(MainEvent):

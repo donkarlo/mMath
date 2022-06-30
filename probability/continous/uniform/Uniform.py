@@ -1,5 +1,4 @@
-from mMath.data.probability.discrete.Pdf import Pdf
-from mMath.data.probability.event.Vector import Vector
+from mMath.probability.discrete.Pdf import Pdf
 from mMath.linearAlgebra.Vector import Vector
 
 

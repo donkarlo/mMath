@@ -1,4 +1,4 @@
-from mMath.data.probability.event.Vector import Vector
+from mMath.probability.event.Vector import Vector
 from mMath.linearAlgebra.Vector import Vector
 
 

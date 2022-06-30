@@ -4,7 +4,7 @@ import numpy as np
 
 from smt.sampling_methods import LHS
 
-from mMath.data.probability.continous.uniform.Uniform import Uniform
+from mMath.probability.continous.uniform.Uniform import Uniform
 from mMath.linearAlgebra.matrix.Matrix import Matrix
 
 

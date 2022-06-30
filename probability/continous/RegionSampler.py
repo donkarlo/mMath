@@ -1,4 +1,4 @@
-from mMath.data.probability.discrete.Pdf import Pdf
+from mMath.probability.discrete.Pdf import Pdf
 from mMath.region.Region import Region
 
 

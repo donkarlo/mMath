@@ -1,7 +1,7 @@
 from random import random
 from typing import List
 
-from mMath.data.probability.discrete.Population import Population as DiscreetPopulation
+from mMath.probability.discrete.Population import Population as DiscreetPopulation
 
 class Uniform():
     def __init__(self,population:DiscreetPopulation):

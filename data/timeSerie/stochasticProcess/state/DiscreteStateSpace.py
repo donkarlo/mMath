@@ -2,7 +2,7 @@ import uuid
 from random import sample
 from typing import Set
 
-from mMath.data.probability.discrete.Pdf import Pdf
+from mMath.probability.discrete.Pdf import Pdf
 from mMath.data.timeSerie.stochasticProcess.state.State import State
 from mMath.data.timeSerie.stochasticProcess.state.StateSpace import StateSpace
 

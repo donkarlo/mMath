@@ -1,5 +1,4 @@
 from typing import List
-from mMath.data.probability.event.Vector import Vector
 import abc
 
 from mMath.linearAlgebra.Vector import Vector
