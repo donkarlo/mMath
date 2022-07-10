@@ -1,16 +1,12 @@
 import numpy as np
 
 
-class RowsTimeDerivativeComputer:
+class TimePosRowsDerivativeComputer:
     @staticmethod
     def computer(npTimePosRows:np.array,velCoefficient:float=1)->np.array:
         '''
         This function assumes the first collumn is timestamp
         '''
-        dimPos = len(npTimePosRows[0]) - 1
-        dimPosVel = 2*dimPos
-        dimTimePosVel = dimPosVel+1
-        numRows = len(npTimePosRows)
         timePosVelRows = []
         for counter,npTimePosRow in enumerate(npTimePosRows):
             if counter == 0:
@@ -41,7 +37,7 @@ if __name__=="__main__":
         ,[3.1,7,4,2]
         ,[4.5,5,4,1]]
     )
-    npTimePosVelArr = RowsTimeDerivativeComputer.computer(npTbArr)
+    npTimePosVelArr = TimePosRowsDerivativeComputer.computer(npTbArr)
     print(npTimePosVelArr)
 
 
