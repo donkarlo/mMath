@@ -3,7 +3,7 @@ import numpy as np
 
 class TimePosRowsDerivativeComputer:
     @staticmethod
-    def computer(npTimePosRows:np.array,velCoefficient:float=1)->np.array:
+    def computer(npTimePosRows:np.ndarray,velCoefficient:float=1,timeDiffZeroReplacementVal  = 1)->np.ndarray:
         '''
         This function assumes the first collumn is timestamp
         '''
@@ -14,13 +14,16 @@ class TimePosRowsDerivativeComputer:
             elif counter>=1:
                 prvTime = npTimePosRows[counter-1][0]
                 curTime =  npTimePosRows[counter][0]
-                diffTime = curTime-prvTime
+                timeDiff = curTime-prvTime
+
+                if timeDiff == 0:
+                    timeDiff = timeDiffZeroReplacementVal
 
                 prvPos = npTimePosRows[counter-1][1:]
                 curPos = npTimePosRows[counter][1:]
                 diffPos = np.subtract(curPos,prvPos)
 
-                curVel = velCoefficient*diffPos/diffTime
+                curVel = velCoefficient*diffPos/timeDiff
                 curTimePosVel = np.hstack(np.array([curTime,curPos,curVel],dtype=object))
                 timePosVelRows.append(curTimePosVel)
                 if counter == 1:
